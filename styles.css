@@ -1854,12 +1854,6 @@ footer p {
     line-height: 1.4;
 }
 
-.redeem-left-
-        param($match)
-        $m = $match.Value
-        return $m
-    
-
 /* Right Column: Form, Inputs & States */
 .redeem-right-col {
     flex: 1.25;
@@ -3111,8 +3105,11 @@ footer p {
     overflow: hidden;
     margin-bottom: 8px;
     border: 1.5px solid rgba(201, 162, 75, 0.25);
-    background: #0d0d0d;
+    background: radial-gradient(circle at center, #152431 0%, #091219 100%);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .food-card-img-box img {
@@ -3122,6 +3119,33 @@ footer p {
     display: block;
     transition: transform 0.5s ease;
     pointer-events: none;
+    position: relative;
+    z-index: 2;
+}
+
+.food-card-img-box img[src=""],
+.food-card-img-box img:not([src]) {
+    display: none !important;
+}
+
+.food-card-img-box::before {
+    content: '\f2e7';
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: rgba(194, 133, 107, 0.35);
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.food-menu-card:hover .food-card-img-box::before {
+    color: var(--accent-gold);
+    transform: scale(1.15);
+}
+
+.food-card-img-box:has(img[src]:not([src=""]))::before {
+    display: none;
 }
 
 .food-menu-card:hover .food-card-img-box img {

@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // GUARANTEED PRELOADER INITIALIZATION & SAFETY FALLBACK
 // ============================================================
 (function() {
@@ -632,9 +632,9 @@ if (modalTimingBtn && modalOrderTimingsSection && modalBody) {
             modalTimingBtn.title = 'Scroll back to Top (উপরে ফিরে যান)';
         } else {
             modalTimingBtn.classList.remove('at-bottom');
-            if (modalTimingIcon) modalTimingIcon.className = 'fas fa-clock';
-            if (modalTimingText) modalTimingText.innerText = 'Timings';
-            modalTimingBtn.title = 'Order Timings (অর্ডার সময়সূচী)';
+            if (modalTimingIcon) modalTimingIcon.className = 'fas fa-arrow-down';
+            if (modalTimingText) modalTimingText.innerText = 'Bottom';
+            modalTimingBtn.title = 'Go to Bottom (নিচে যান)';
         }
     }, { passive: true });
 }
